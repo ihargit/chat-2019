@@ -1,17 +1,14 @@
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import MenuAppBar from './components/menuAppBar';
 import MessageInputField from './components/messageInputField';
+import Layout from './components/layout';
 import 'typeface-roboto';
 
 function App() {
   return (
     <>
-      <CssBaseline />
-      <MenuAppBar />
-      <MessageInputField />
-
-
+      <Layout>
+        <MessageInputField />
+      </Layout>
     </>
   );
 }

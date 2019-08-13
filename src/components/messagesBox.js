@@ -6,9 +6,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexDirection: 'column-reverse',
-    // justifyContent: 'flex-end',
     overflowY: 'auto',
-    height: 'calc(100vh - 180px)',
+    height: 'calc(100vh - 210px)',
   },
 }));
 

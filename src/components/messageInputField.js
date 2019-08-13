@@ -6,14 +6,12 @@ const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
+    marginBottom: theme.spacing(1),
   },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-  },
-  dense: {
-    marginTop: theme.spacing(2),
-  },
+  inputField: {
+    backgroundColor: '#3f51b51',
+    wrap: 'nowrap',
+  }
 }));
 
 export default function MessageInputField() {
@@ -22,12 +20,13 @@ export default function MessageInputField() {
   return (
     <form className={classes.container} noValidate autoComplete="off">
       <TextField
+        className={classes.inputField}
         id="outlined-full-width"
-        style={{ margin: 8 }}
         placeholder="Type your message here..."
         fullWidth
         margin="normal"
         variant="outlined"
+        autoFocus={true}
         InputLabelProps={{
           shrink: true,
         }}

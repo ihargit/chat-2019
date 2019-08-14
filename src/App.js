@@ -4,16 +4,16 @@ import Layout from './components/layout';
 import MessagesBox from './components/messagesBox';
 import MessagesList from './components/messagesList';
 import 'typeface-roboto';
+import ws from './webSocket';
 
 function App() {
-  // const socket = new WebSocket('wss://wssproxy.herokuapp.com/');
   return (
     <>
       <Layout>
         <MessagesBox>
           <MessagesList />
         </MessagesBox>
-        <MessageInputField />
+        <MessageInputField ws={ws} />
       </Layout>
     </>
   );

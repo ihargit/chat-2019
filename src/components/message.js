@@ -10,6 +10,8 @@ const useStyles = makeStyles(theme => ({
   },
   messageBody: {
     padding: theme.spacing(1),
+    width: 'fit-content',
+    maxWidth: 'fill-available',
   },
   messageTitle: {
     display: 'flex',

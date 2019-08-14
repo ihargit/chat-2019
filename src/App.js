@@ -1,8 +1,8 @@
 import React from 'react';
-import MessageInputField from './components/messageInputField';
-import Layout from './components/layout';
-import MessagesBox from './components/messagesBox';
-import MessagesList from './components/messagesList';
+import MessageInputField from './components/MessageInputField';
+import Layout from './components/Layout';
+import MessagesBox from './components/MessagesBox';
+import MessagesList from './components/MessagesList';
 import 'typeface-roboto';
 import ws from './webSocket';
 

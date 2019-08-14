@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(2),
     maxWidth: '80%',
   },
   messageBody: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 export default function Message(props) {
   const classes = useStyles();
   return (
-    <Box className={classes.root} style={{ alignSelf: props.flexEnd }} >
+    <Box component="li" className={classes.root} style={{ alignSelf: props.flexEnd }} >
       <Box className={classes.messageTitle} style={{ justifyContent: props.flexEnd }}>
         <Typography
           variant="body1"

@@ -13,7 +13,6 @@ const useStyles = makeStyles(theme => ({
   },
   messageTitle: {
     display: 'flex',
-    // justifyContent: 'flex-end',
     alignItems: 'baseline',
   }
 }));

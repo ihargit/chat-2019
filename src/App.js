@@ -6,6 +6,7 @@ import MessagesList from './components/messagesList';
 import 'typeface-roboto';
 
 function App() {
+  // const socket = new WebSocket('wss://wssproxy.herokuapp.com/');
   return (
     <>
       <Layout>

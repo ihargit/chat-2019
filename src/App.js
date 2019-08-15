@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import MessageInputField from './components/MessageInputField';
 import Layout from './components/Layout';
-import MessagesBox from './components/M11essagesBox';
-import MessagesList from ./ components / M11essagesList';
+import MessagesBox from './components/MessagesBox';
+import MessagesList from './components/MessagesList';
 import 'typeface-roboto';
 import ws from './webSocket';
 import store from './redux/store';

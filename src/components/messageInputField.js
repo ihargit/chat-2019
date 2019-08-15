@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import store from './redux/store';
-import { addMessages } from './redux/actions';
+// import store from '../redux/store';
+// import { addMessages } from '../redux/actions';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -16,21 +16,26 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function MessageInputField() {
+export default function MessageInputField(props) {
   const classes = useStyles();
   const [value, setValue] = useState('');
 
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    const msg = {
-      message: value,
-      flexEnd: 'flex-end',
-      time: Date.now(),
-      id: `${Date.now()}ihargit`
+    if (value) {
+      const msgOut = {
+        from: 'ihargit',
+        message: value,
+      }
+      props.ws.send(JSON.stringify(msgOut));
     }
-    store.dispatch(addMessages([msg]));
+    // const msg = {
+    //   message: value,
+    //   flexEnd: 'flex-end',
+    //   time: Date.now(),
+    //   id: `${Date.now()}ihargit`
+    // }
+    // store.dispatch(addMessages([msg]));
     setValue(e.target.value = '');
   }
 

@@ -9,14 +9,19 @@ export default function addMessages(state = initialState, action) {
   switch (action.type) {
     case ADD_MESSAGES:
       const { content } = action.payload;
-      const ids = [...state.allIds];
-      const messages = content.filter(m => !ids.includes(m.id));
-      messages.sort((a, b) => a.time - b.time);
-      messages.forEach(m => ids.push(m.id));
+      const messages = content.filter(m => !state.allIds.includes(m.id));
+      if (state.messages.length === -1) {
+        messages.sort((a, b) => a.time - b.time);
+      }
+      const ids = [];
+      messages.forEach(m => {
+        ids.push(m.id);
+        if (m.from === 'ihargit') { m.flexEnd = 'flex-end' };
+      });
       return {
         messages: [...state.messages,
         ...messages],
-        allIds: [ids]
+        allIds: [...state.allIds, ...ids]
       }
     default:
       return state;

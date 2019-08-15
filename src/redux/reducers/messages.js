@@ -24,9 +24,9 @@ const initialState = [
 export default function addMessages(state = initialState, action) {
   switch (action.type) {
     case ADD_MESSAGES:
-      const { messages } = action.payload;
+      const { content } = action.payload;
       return [...state,
-      ...messages]
+      ...content]
     default:
       return state;
   }

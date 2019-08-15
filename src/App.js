@@ -5,6 +5,8 @@ import MessagesBox from './components/MessagesBox';
 import MessagesList from './components/MessagesList';
 import 'typeface-roboto';
 import ws from './webSocket';
+import store from './redux/store';
+import { addMessages } from './redux/actions';
 
 function App() {
 
@@ -13,9 +15,10 @@ function App() {
       console.log("WS opened!");
     });
 
-    // ws.addEventListener('message', (e) => {
-    //   store.dispatch(e.data);
-    // });
+    ws.addEventListener('message', (e) => {
+      const messages = JSON.parse(e.data);
+      store.dispatch(addMessages(messages));
+    });
   });
 
   return (

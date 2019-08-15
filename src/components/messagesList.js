@@ -16,7 +16,7 @@ const MessagesList = ({ messages }) => (
       messages && messages.length
         ? messages.map((message) => {
           return <Message
-            key={message.id}
+            key={`${Date.now()}${message.id}`}
             from={message.from}
             flexEnd={message.flexEnd}
             time={message.time}

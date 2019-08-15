@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import MessageInputField from './components/messageInputField';
+import MessageInputField from './components/MessageInputField';
 import Layout from './components/Layout';
 import MessagesBox from './components/MessagesBox';
 import MessagesList from './components/MessagesList';

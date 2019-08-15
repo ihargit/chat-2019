@@ -2,6 +2,7 @@ import React from "react";
 import Paper from '@material-ui/core/Paper';
 import { Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { convertEpochDate } from '../utils';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -43,7 +44,7 @@ export default function Message(props) {
           }}
           gutterBottom
         >
-          {props.time}
+          {convertEpochDate(props.time)}
         </Typography>
       </Box>
       <Paper className={classes.messageBody}>

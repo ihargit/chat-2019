@@ -1,5 +1,5 @@
 import React from "react";
-import Message from './M11essage';
+import Message from './Message';
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({ messages: state.messages.messages });

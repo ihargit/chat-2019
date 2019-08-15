@@ -23,7 +23,7 @@ const MessagesList = ({ messages }) => (
             message={message.message}
           />
         })
-        : console.log(mapStateToProps)
+        : console.log('Please, wait!')
     }
   </ul>
 );

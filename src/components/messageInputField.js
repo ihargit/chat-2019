@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import store from './redux/store';
+import { addMessages } from './redux/actions';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -16,10 +18,33 @@ const useStyles = makeStyles(theme => ({
 
 export default function MessageInputField() {
   const classes = useStyles();
+  const [value, setValue] = useState('');
+
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const msg = {
+      message: value,
+      flexEnd: 'flex-end',
+      time: Date.now(),
+      id: `${Date.now()}ihargit`
+    }
+    store.dispatch(addMessages([msg]));
+    setValue(e.target.value = '');
+  }
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setValue(e.target.value);
+  }
 
   return (
-    <form className={classes.container} noValidate autoComplete="off">
+    <form className={classes.container} noValidate autoComplete="off" onSubmit={handleSubmit}>
       <TextField
+        value={value}
+        onChange={handleChange}
+        name="message"
         className={classes.inputField}
         id="outlined-full-width"
         placeholder="Type your message here..."

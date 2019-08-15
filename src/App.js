@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import MessageInputField from './components/MessageInputField';
-import Layout from './components/Layout';
+import Layout from './components/Layossut';
 import MessagesBox from './components/MessagesBox';
 import MessagesList from './components/MessagesList';
 import 'typeface-roboto';
